@@ -5,10 +5,12 @@ import Sign_Page from "./pages/Signup_Page.jsx";
 import Login_Page from "./pages/Login_Page.jsx";
 import Create_Energy_Page from "./pages/Create_Energy_Page.jsx";
 import Data_page from "./pages/Data_Page.jsx";
+import { WalletProvider } from "./context/useWallet.jsx";
 
 function App() {
   return (
     <>
+    <WalletProvider>
       <div className="flex flex-col min-h-screen bg-gray-900 text-gray-100">
         <BrowserRouter>
           <Routes>
@@ -20,6 +22,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
+      </WalletProvider>
     </>
   );
 }

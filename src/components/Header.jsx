@@ -1,20 +1,16 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useWallet } from "../context/useWallet.jsx";
 
 function Header() {
   let navigate = useNavigate();
-  const [account, setAccount] = useState(null);
-
-  const accountChangeHandler = (newAccount) => {
-    setAccount(newAccount);
-  };
+  const {walletAddress, setWalletAddress} = useWallet();
 
   const connectWallet = async () => {
     if (window.ethereum) {
       window.ethereum
         .request({ method: "eth_requestAccounts" })
-        .then((res) => accountChangeHandler(res[0]));
+        .then((res) => setWalletAddress(res[0]));
     } else {
       alert("install metamask extension!!");
     }
@@ -98,7 +94,11 @@ function Header() {
               className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
               onClick={connectWallet}
             >
-              {account ? `Connected to ${account.substring(0, 6)}...${account.slice(-4)}` : "Connect Wallet"}
+              {walletAddress
+                ? `Connected to ${walletAddress.substring(0, 6)}...${walletAddress.slice(
+                    -4
+                  )}`
+                : "Connect Wallet"}
             </button>
           </div>
         </div>

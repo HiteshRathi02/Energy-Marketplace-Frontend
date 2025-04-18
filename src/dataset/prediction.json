@@ -1,0 +1,19 @@
+[
+    { "label": "8.00-8.15", "value1": 10, "value2": 22 },
+    { "label": "8.15-8.30", "value1": 20, "value2": 18 },
+    { "label": "8.30-8.45", "value1": 12, "value2": 25 },
+    { "label": "8.45-9.00", "value1": 22, "value2": 19 },
+    { "label": "9.00-9.15", "value1": 20, "value2": 21 },
+    { "label": "9.15-9.30", "value1": 18, "value2": 27 },
+    { "label": "9.30-9.45", "value1": 16, "value2": 30 },
+    { "label": "9.45-10.00", "value1": 26, "value2": 24 },
+    { "label": "10.00-10.15", "value1": 25, "value2": 26 },
+    { "label": "10.15-10.30", "value1": 19, "value2": 20 },
+    { "label": "10.30-10.45", "value1": 15, "value2": 28 },
+    { "label": "10.45-11.00", "value1": 17, "value2": 32 },
+    { "label": "11.00-11.15", "value1": 31, "value2": 29 },
+    { "label": "11.15-11.30", "value1": 22, "value2": 35 },
+    { "label": "11.30-11.45", "value1": 33, "value2": 31 },
+    { "label": "11.45-12.00", "value1": 20, "value2": 38 }
+  ]
+  

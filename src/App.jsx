@@ -4,6 +4,7 @@ import Layout from "./pages/Layout.jsx";
 import Sign_Page from "./pages/Signup_Page.jsx";
 import Login_Page from "./pages/Login_Page.jsx";
 import Create_Energy_Page from "./pages/Create_Energy_Page.jsx";
+import Data_page from "./pages/Data_Page.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/signup" element={<Sign_Page />} />
             <Route path="/login" element={<Login_Page />} />
             <Route path="/create" element={<Create_Energy_Page />} />
+            <Route path="/data" element={<Data_page />} />
           </Routes>
         </BrowserRouter>
       </div>

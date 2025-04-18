@@ -1,12 +1,76 @@
-# React + Vite
+# ⚡ EnergyPeer - Decentralized Energy Marketplace (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **EnergyPeer**, a decentralized energy marketplace that allows users to mint, buy, and view NFTs representing energy assets. This is the **frontend** for the platform, built using React, TailwindCSS, and Web3 technologies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 **User Authentication** – Login and Sign Up screens  
+- 🔌 **Wallet Connection** – Connect your Ethereum wallet (e.g., MetaMask)  
+- 🌐 **Marketplace** – Browse available Energy NFTs for purchase  
+- ⚒️ **Create NFT** – Mint new NFTs by uploading energy data (e.g., kWh, location, source)  
+- 📦 **Purchases** – View all NFTs purchased by the user  
+- 📊 **Data** – Visual insights from the energy trading platform  
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React, React Router  
+- **Styling:** Tailwind CSS  
+- **Wallet Interaction:** Web3 via `window.ethereum`  
+- **State Management:** React Context API  
+
+---
+
+## 📁 Folder Structure
+
+src/ ├── components/ # Reusable components (e.g., Header) ├── pages/ # Page-level components (Marketplace, Create, etc.) ├── context/ # Wallet context (useWallet.js) ├── App.jsx # Main App with routing ├── index.js # React DOM render └── assets/ # Optional: images, icons, etc.
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/energy-marketplace-frontend.git
+cd energy-marketplace-frontend
+```
+### 2. Install dependencies
+```bash
+npm install
+```
+### 3. Start the development server
+```bash
+npm run dev
+```
+This will run the app on http://localhost:5173/ (if you're using Vite).
+
+### To connect your wallet:
+
+Install MetaMask
+
+Open the site and click Connect Wallet
+
+Allow the site to access your wallet address
+
+### 📝 Notes
+Ensure you're on the correct blockchain network when interacting with wallets.
+
+NFT minting assumes integration with a smart contract (handled in backend or blockchain layer).
+
+All wallet interactions use window.ethereum — no external libraries like ethers.js or wagmi yet.
+
+### 📌 Future Improvements
+Switch to ethers.js or wagmi for better wallet handling
+
+Add notifications and transaction statuses
+
+Improve form validations and error handling
+
+Deploy to IPFS, Vercel, or Netlify
+
+### 📃 License
+MIT License. Feel free to fork, improve, and contribute!

@@ -1,8 +1,24 @@
 import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
+  const [account, setAccount] = useState(null);
+
+  const accountChangeHandler = (newAccount) => {
+    setAccount(newAccount);
+  };
+
+  const connectWallet = async () => {
+    if (window.ethereum) {
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then((res) => accountChangeHandler(res[0]));
+    } else {
+      alert("install metamask extension!!");
+    }
+  };
   return (
     <div className=" bg-gray-900 text-gray-100">
       <header className="bg-gray-800 py-4 px-6 shadow-lg sticky top-0 z-10">
@@ -32,50 +48,57 @@ function Header() {
               />
             </svg>
             <span className="text-xl font-bold bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">
-              <button onClick={() => navigate("/",{replace:true})}>EnergyPeer</button>  
+              <button onClick={() => navigate("/", { replace: true })}>
+                EnergyPeer
+              </button>
             </span>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-              <button
-                onClick={() => navigate("/marketplace",{replace:true})}
-                className="hover:text-green-400 transition-colors duration-300 border-b-2 border-transparent hover:border-green-400 py-1"
-              >
-               Marketplace
-              </button>
-              <button
-                onClick={() => navigate("/create",{replace:true})}
-                className="hover:text-green-400 transition-colors duration-300 border-b-2 border-transparent hover:border-green-400 py-1"
-              >
-                Create Energy NFT
-              </button>
-              <button
-                onClick={() => navigate("/purchases",{replace:true})}
-                className="hover:text-green-400 transition-colors duration-300 border-b-2 border-transparent hover:border-green-400 py-1"
-              >
-                Purchases
-              </button>
-              <button
-                onClick={() => navigate("/data",{replace:true})}
-                className="hover:text-green-400 transition-colors duration-300 border-b-2 border-transparent hover:border-green-400 py-1"
-              >
-                Data
-              </button>
-            </nav>
+            <button
+              onClick={() => navigate("/marketplace", { replace: true })}
+              className="hover:text-green-400 transition-colors duration-300 border-b-2 border-transparent hover:border-green-400 py-1"
+            >
+              Marketplace
+            </button>
+            <button
+              onClick={() => navigate("/create", { replace: true })}
+              className="hover:text-green-400 transition-colors duration-300 border-b-2 border-transparent hover:border-green-400 py-1"
+            >
+              Create Energy NFT
+            </button>
+            <button
+              onClick={() => navigate("/purchases", { replace: true })}
+              className="hover:text-green-400 transition-colors duration-300 border-b-2 border-transparent hover:border-green-400 py-1"
+            >
+              Purchases
+            </button>
+            <button
+              onClick={() => navigate("/data", { replace: true })}
+              className="hover:text-green-400 transition-colors duration-300 border-b-2 border-transparent hover:border-green-400 py-1"
+            >
+              Data
+            </button>
+          </nav>
 
           <div className="flex items-center space-x-4">
-            <button className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-            onClick={() => navigate("/login",{replace:true})}>
+            <button
+              className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+              onClick={() => navigate("/login", { replace: true })}
+            >
               Log In
             </button>
             <button
               className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-              onClick={() => navigate("/signup",{replace:true})}
+              onClick={() => navigate("/signup", { replace: true })}
             >
               Sign Up
             </button>
-            <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-              Connect Wallet
+            <button
+              className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+              onClick={connectWallet}
+            >
+              {account ? `Connected to ${account.substring(0, 6)}...${account.slice(-4)}` : "Connect Wallet"}
             </button>
           </div>
         </div>

@@ -27,7 +27,7 @@ function CTA_Section() {
                   className="px-8 py-3 rounded-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                   onClick={() => navigate("/signup", { replace: true })}
                 >
-                  Sign Up Now
+                  Sign Up
                 </button>
                 <button className="px-8 py-3 rounded-lg border-2 border-green-500 hover:bg-gray-800 text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                   <a href="mailto:btech10687.21@bitmesra.ac.in">Contact Us</a>

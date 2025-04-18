@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "../components/Header.jsx";
-import  Login  from "../components/Login.jsx";
+import Create_Energy_NFT from "../components/Create_Energy_NFT.jsx";
 
-function Login_Page() {
+function Create_Energy_Page() {
   return (
     <>
       <div className="flex flex-col min-h-screen bg-gray-900 text-gray-100">
         <Header />
-        <Login/>
+        <Create_Energy_NFT/>
       </div>
     </>
   );
 }
 
-export default Login_Page;
+export default Create_Energy_Page;

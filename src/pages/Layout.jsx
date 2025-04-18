@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/header.jsx";
+import Header from "../components/Header.jsx";
 import Hero from "../components/Hero.jsx";
 import Feature from "../components/Feature.jsx";
 import CTA_Section from "../components/CTA_Section.jsx";
